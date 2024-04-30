@@ -1,7 +1,23 @@
-<h1>Animes#index</h1>
+<h1>Rails Anime List</h1>
 
+  <form action="/animes" accept-charset="UTF-8" method="post">
+  <input type="hidden" name="authenticity_token" value="...">
+
+  <div>
+    <label for="anime_title">Title</label><br>
+    <input type="text" name="anime[title]" id="anime_title">
+    <input type="submit" name="commit" value="Insert anime" data-disable-with="Insert anime">
+  </div>
+</form>
+
+
+<br><br><br>
+
+<h3>Anime List: </h3>
 <ul>
     <% @animes.each do |anime| %>
-        <li><%= anime.title %></li>
+        <li>
+          <%= link_to anime.title, anime_path(anime) %>
+        </li>
     <% end %>
 </ul>
