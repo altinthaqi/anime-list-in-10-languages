@@ -10,14 +10,20 @@
   </div>
 </form>
 
-
+  
 <br><br><br>
 
-<h3>Anime List: </h3>
+<h3>Anime List: </h3>    
 <ul>
     <% @animes.each do |anime| %>
-        <li>
-          <%= link_to anime.title, anime_path(anime) %>
+        <li style="display: flex;">
+        <%= link_to anime.title, anime_path(anime) %> &nbsp;&nbsp; <form action="/animes/<%= anime.id %>/edit">
+        <button type="submit">Edit</button>
+     </form>  &nbsp;&nbsp; <form action="/animes/<%= anime.id %>" method="delete">
+     <button type="submit">Delete</button>
+  </form>
+  
         </li>
+        <br>
     <% end %>
 </ul>
