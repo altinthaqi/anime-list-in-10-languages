@@ -1,0 +1,18 @@
+<h1> Anime list </h1>
+
+<.anime_form changeset={@changeset} action={~p"/"} />
+
+<.table id="anime" rows={@anime_collection} row_click={&JS.navigate(~p"/anime/#{&1}")}>
+  <:col :let={anime} label="Title"><%= anime.title %></:col>
+  <:action :let={anime}>
+    <div class="sr-only">
+      <.link navigate={~p"/anime/#{anime}"}>Show</.link>
+    </div>
+    <.link navigate={~p"/anime/#{anime}/edit"}>Edit</.link>
+  </:action>
+  <:action :let={anime}>
+    <.link href={~p"/anime/#{anime}"} method="delete" data-confirm="Are you sure?">
+      Delete
+    </.link>
+  </:action>
+</.table>

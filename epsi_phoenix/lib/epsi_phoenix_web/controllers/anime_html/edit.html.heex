@@ -1,0 +1,8 @@
+<.header>
+  Edit Anime <%= @anime.id %>
+  <:subtitle>Use this form to manage anime records in your database.</:subtitle>
+</.header>
+
+<.anime_form changeset={@changeset} action={~p"/anime/#{@anime}"} />
+
+<.back navigate={~p"/anime"}>Back to anime</.back>

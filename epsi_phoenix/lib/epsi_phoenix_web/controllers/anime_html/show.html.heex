@@ -1,0 +1,15 @@
+<.header>
+  Anime <%= @anime.id %>
+  <:subtitle>This is a anime record from your database.</:subtitle>
+  <:actions>
+    <.link href={~p"/anime/#{@anime}/edit"}>
+      <.button>Edit anime</.button>
+    </.link>
+  </:actions>
+</.header>
+
+<.list>
+  <:item title="Title"><%= @anime.title %></:item>
+</.list>
+
+<.back navigate={~p"/anime"}>Back to anime</.back>
