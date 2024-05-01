@@ -15,6 +15,7 @@ defmodule EpsiPhoenixWeb.AnimeController do
     render(conn, :new, changeset: changeset)
   end
 
+  @spec create(Plug.Conn.t(), map()) :: Plug.Conn.t()
   def create(conn, %{"anime" => anime_params}) do
     case Animes.create_anime(anime_params) do
       {:ok, _anime} ->
@@ -45,7 +46,7 @@ defmodule EpsiPhoenixWeb.AnimeController do
       {:ok, anime} ->
         conn
         |> put_flash(:info, "Anime updated successfully.")
-        |> redirect(to: ~p"/anime/#{anime}")
+        |> redirect(to: ~p"/")
 
       {:error, %Ecto.Changeset{} = changeset} ->
         render(conn, :edit, anime: anime, changeset: changeset)
@@ -58,6 +59,6 @@ defmodule EpsiPhoenixWeb.AnimeController do
 
     conn
     |> put_flash(:info, "Anime deleted successfully.")
-    |> redirect(to: ~p"/anime")
+    |> redirect(to: ~p"/")
   end
 end

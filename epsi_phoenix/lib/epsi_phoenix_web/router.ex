@@ -19,6 +19,9 @@ defmodule EpsiPhoenixWeb.Router do
 
     get("/", AnimeController, :index)
     post("/", AnimeController, :create)
+    delete("/:id", AnimeController, :delete)
+    put("/:id", AnimeController, :update)
+    get("/:id/edit", AnimeController, :edit)
   end
 
   # Other scopes may use custom stacks.
