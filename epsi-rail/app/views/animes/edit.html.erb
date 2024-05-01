@@ -1,12 +1,16 @@
-
 <a href="/animes/">go back</a>
 
-<h1> Edit anime </h1>
-  <form action="/animes/<%= @anime.id %>" accept-charset="UTF-8" method="patch">
-  <input type="hidden" name="authenticity_token" value="...">
+<h1>Edit anime</h1>
+<form action="/animes/<%= @anime.id %>" accept-charset="UTF-8" method="patch">
+  <input type="hidden" name="authenticity_token" value="..." />
   <div>
-    <label for="anime_title">Title</label><br>
-    <input type="text" name="anime[title]" id="anime_title">
-    <input type="submit" name="commit" value="Update anime" data-disable-with="Update">
+    <label for="anime_title">Title</label><br />
+    <input type="text" name="anime[title]" id="anime_title" />
+    <input
+      type="submit"
+      name="commit"
+      value="Update anime"
+      data-disable-with="Update"
+    />
   </div>
 </form>
