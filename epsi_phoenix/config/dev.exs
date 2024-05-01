@@ -2,10 +2,10 @@ import Config
 
 # Configure your database
 config :epsi_phoenix, EpsiPhoenix.Repo,
-  username: "postgres",
-  password: "postgres",
+  username: "epsilono",
+  password: "epsilono",
   hostname: "localhost",
-  database: "epsi_phoenix_dev",
+  database: "anime_list_dev",
   stacktrace: true,
   show_sensitive_data_on_connection_error: true,
   pool_size: 10
